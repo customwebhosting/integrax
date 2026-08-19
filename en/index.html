@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTEGRAX | Microsoft Technology Expert</title>
+    <style>
+        /* Definice barev a Microsoft akcentů */
+        :root {
+            --ms-red: #f25022;
+            --ms-green: #7fba00;
+            --ms-blue: #00a4ef;
+            --ms-yellow: #ffb900;
+            
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-header: #0f172a;
+            --bg-hero: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --text-hero-p: #94a3b8;
+            --border-card: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.05);
+        }
 
+        /* Tmavý režim podle systému */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-body: #0b0f19;
+                --bg-card: #111827;
+                --text-main: #e2e8f0;
+                --text-muted: #9ca3af;
+                --border-card: #1f2937;
+                --shadow: rgba(0, 0, 0, 0.4);
+            }
+            body, main, .services-grid, .card, .card h3, .card p, .card li {
+                color: #e2e8f0 !important;
+            }
+            .card p {
+                color: #9ca3af !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.4;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        header {
+            background-color: var(--bg-header);
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--ms-blue);
+        }
+
+        header .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--ms-blue);
+        }
+
+        .lang-switch {
+            font-weight: bold;
+            color: #ffffff !important;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .hero {
+            background: var(--bg-hero);
+            color: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #1e293b;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-hero-p);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--ms-blue);
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem; 
+            font-size: 1.4rem;
+            color: var(--text-main);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-card);
+            box-shadow: 0 4px 6px -1px var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card li {
+            font-size: 0.8rem;
+            margin-bottom: 0.4rem;
+            padding-left: 1.2rem;
+            position: relative;
+            color: var(--text-main);
+        }
+
+        .card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .card.card-iam { border-top: 4px solid var(--ms-red); }
+        .card.card-iam li::before { color: var(--ms-red); }
+        .card.card-iam:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(242, 80, 34, 0.12); }
+
+        .card.card-mdm { border-top: 4px solid var(--ms-green); }
+        .card.card-mdm li::before { color: var(--ms-green); }
+        .card.card-mdm:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(127, 186, 0, 0.12); }
+
+        .card.card-compliance { border-top: 4px solid var(--ms-blue); }
+        .card.card-compliance li::before { color: var(--ms-blue); }
+        .card.card-compliance:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0, 164, 239, 0.12); }
+
+        .card.card-ma { border-top: 4px solid var(--ms-yellow); }
+        .card.card-ma li::before { color: var(--ms-yellow); }
+        .card.card-ma:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(255, 185, 0, 0.12); }
+
+        footer {
+            background-color: var(--bg-header);
+            color: var(--text-hero-p);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border-card);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">INTEGRAX</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="../index.html" class="lang-switch">CZ</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="hero">
+            <span class="badge">Microsoft Solutions Partner</span>
+            <h1>Secure Digital Transformation</h1>
+            <p>We help companies efficiently implement, manage, and secure cloud environments on the Microsoft platform</p>
+        </div>
+
+        <h2 id="services" class="section-title">Our Specialization</h2>
+
+        <div class="services-grid">
+            
+            <div class="card card-iam">
+                <h3>Identity & Access Management (IAM)</h3>
+                <p>Secure access to your business data and Microsoft Entra ID management.</p>
+                <ul>
+                    <li>Multi-factor authentication (MFA) deployment</li>
+                    <li>Conditional Access policy architecture</li>
+                    <li>Privileged Identity Management (PIM)</li>
+                    <li>Microsoft Entra ID management and security</li>
+                </ul>
+            </div>
+
+            <div class="card card-mdm">
+                <h3>Device Management (MDM/MAM)</h3>
+                <p>Control over company laptops, mobiles, and tablets in the cloud.</p>
+                <ul>
+                    <li>Microsoft Intune configuration</li>
+                    <li>Automated deployment via Windows Autopilot</li>
+                    <li>Securing corporate apps on personal mobile devices</li>
+                </ul>
+            </div>
+
+            <div class="card card-compliance">
+                <h3>Compliance & Security</h3>
+                <p>Protection of sensitive information and regulatory compliance.</p>
+                <ul>
+                    <li>Data classification and protection with Microsoft Purview</li>
+                    <li>Data Loss Prevention (DLP)</li>
+                    <li>Auditing and security incident logging</li>
+                </ul>
+            </div>
+
+            <div class="card card-ma">
+                <h3>Mergers & Acquisitions (M&A)</h3>
+                <p>Seamless IT integration during corporate restructuring, mergers, and infrastructure moves.</p>
+                <ul>
+                    <li>Tenant-to-tenant migration and consolidation</li>
+                    <li>Hybrid cloud architecture design and management</li>
+                    <li>On-premises to cloud migration and reverse engineering</li>
+                    <li>Cross-tenant identity and infrastructure integration</li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 INTEGRAX. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
