@@ -74,6 +74,7 @@
             color: #ffffff;
         }
 
+        /* OPRAVENÁ NAVIGACE: Vždy vedle sebe s jasnými rozestupy */
         nav {
             display: flex;
             gap: 1.5rem;
@@ -86,14 +87,25 @@
             font-weight: 500;
             font-size: 0.9rem;
             transition: color 0.2s ease;
+            display: inline-block;
         }
 
         nav a:hover {
             color: var(--ms-blue);
         }
 
+        /* JASNĚ VIDITELNÝ PŘEPÍNAČ JAZYKA */
         .lang-switch {
-            font-weight: bold;
+            font-weight: 700 !important;
+            color: var(--ms-blue) !important; /* Svítivá modrá */
+            border: 1px solid var(--ms-blue);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        
+        .lang-switch:hover {
+            background-color: var(--ms-blue);
             color: #ffffff !important;
         }
 
@@ -236,6 +248,7 @@
         <nav>
             <a href="#sluzby">Služby</a>
             <a href="kontakt.html">Kontakt</a>
+            <!-- Opravený a zvýrazněný odkaz -->
             <a href="./en/index.html" class="lang-switch">EN</a>
         </nav>
     </header>
