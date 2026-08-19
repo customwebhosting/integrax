@@ -57,7 +57,8 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid var(--ms-blue);
+            /* Pruh pod hlavičkou byl kompletně odstraněn */
+            border-bottom: none; 
         }
 
         header .logo {
@@ -136,7 +137,7 @@
         .card p strong {
             color: var(--text-muted);
             display: inline-block;
-            width: 110px; /* Mírně rozšířeno, aby se delší anglická slova jako "Company:" a "Address:" vešla na jeden řádek */
+            width: 110px;
         }
 
         .card .email-block {
@@ -183,8 +184,8 @@
             <h3>Billing Details</h3>
             <p><strong>Company:</strong> INTEGRAX Consulting Services s.r.o.</p>
             <p><strong>Address:</strong> Na dolinach 1272/41, 140 00 Prague</p>
-            <p><strong>Reg. No. (IČO):</strong> 08988391</p>
-            <p><strong>VAT No. (DIČ):</strong> CZ08988391</p>
+            <p><strong>CIN:</strong> 08988391</p>
+            <p><strong>TIN:</strong> CZ08988391</p>
 
             <div class="email-block">
                 <h3>Get in Touch</h3>
