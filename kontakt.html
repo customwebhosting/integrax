@@ -67,6 +67,12 @@
             color: #ffffff;
         }
 
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
         nav a {
             color: #94a3b8;
             text-decoration: none;
@@ -77,6 +83,11 @@
 
         nav a:hover {
             color: var(--ms-blue);
+        }
+
+        .lang-switch {
+            font-weight: bold;
+            color: #ffffff !important;
         }
 
         main {
@@ -161,6 +172,7 @@
         <div class="logo">INTEGRAX</div>
         <nav>
             <a href="index.html">← Zpět na Služby</a>
+            <a href="./en/kontakt.html" class="lang-switch">EN</a>
         </nav>
     </header>
 
@@ -169,7 +181,7 @@
        
         <div class="card">
             <h3>Fakturační údaje</h3>
-	    <p><strong>Firma:</strong> INTEGRAX Consulting Services s.r.o.</p>
+            <p><strong>Firma:</strong> INTEGRAX Consulting Services s.r.o.</p>
             <p><strong>Sídlo:</strong> Na dolinách 1272/41, 140 00 Praha</p>
             <p><strong>IČO:</strong> 08988391</p>
             <p><strong>DIČ:</strong> CZ08988391</p>
@@ -177,7 +189,6 @@
             <div class="email-block">
                 <h3>Napište nám</h3>
                 <p><strong>Email:</strong> info (at) integrax.cz</p>
-  
             </div>
         </div>
     </main>
