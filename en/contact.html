@@ -9,7 +9,6 @@
         :root {
             --ms-blue: #00a4ef;
             --ms-green: #7fba00;
-            --ms-yellow: #ffb900;
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --bg-header: #0f172a;
@@ -128,11 +127,6 @@
             color: var(--ms-blue);
         }
 
-        /* Žlutý akcent pro box z hlavní strany */
-        .card.card-ma { 
-            border-top: 4px solid var(--ms-yellow); 
-        }
-
         .card p {
             font-size: 0.95rem;
             margin-bottom: 0.75rem;
@@ -142,7 +136,7 @@
         .card p strong {
             color: var(--text-muted);
             display: inline-block;
-            width: 130px;
+            width: 110px; /* Mírně rozšířeno, aby se delší anglická slova jako "Company:" a "Address:" vešla na jeden řádek */
         }
 
         .card .email-block {
@@ -151,8 +145,11 @@
             border-top: 1px dashed var(--border-card);
         }
 
-        .card .email-block h3 {
-            color: var(--ms-yellow);
+        /* Antispam ochrana pro e-mail */
+        .safe-email {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            font-weight: 600;
         }
 
         footer {
@@ -174,21 +171,20 @@
     <header>
         <div class="logo">INTEGRAX</div>
         <nav>
-            <a href="index.html">← Back to Services</a>
-            <a href="../kontakt.html" class="lang-switch">CZ</a>
+            <a href="services.html">← Back to Services</a>
+            <a href="../contact.html" class="lang-switch">CZ</a>
         </nav>
     </header>
 
     <main>
         <h1 class="page-title">Contact Information</h1>
        
-        <!-- Přidána třída card-ma pro žlutou horní linku -->
-        <div class="card card-ma">
+        <div class="card">
             <h3>Billing Details</h3>
             <p><strong>Company:</strong> INTEGRAX Consulting Services s.r.o.</p>
-            <p><strong>Registered Office:</strong> Na dolinách 1272/41, 140 00 Prague</p>
-            <p><strong>Company ID (IČO):</strong> 08988391</p>
-            <p><strong>VAT ID (DIČ):</strong> CZ08988391</p>
+            <p><strong>Address:</strong> Na dolinach 1272/41, 140 00 Prague</p>
+            <p><strong>Reg. No. (IČO):</strong> 08988391</p>
+            <p><strong>VAT No. (DIČ):</strong> CZ08988391</p>
 
             <div class="email-block">
                 <h3>Get in Touch</h3>
