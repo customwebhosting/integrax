@@ -77,6 +77,7 @@
         nav {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
         nav a {
@@ -89,6 +90,11 @@
 
         nav a:hover {
             color: var(--ms-blue);
+        }
+
+        .lang-switch {
+            font-weight: bold;
+            color: #ffffff !important;
         }
 
         main {
@@ -230,6 +236,7 @@
         <nav>
             <a href="#sluzby">Služby</a>
             <a href="kontakt.html">Kontakt</a>
+            <a href="./en/index.html" class="lang-switch">EN</a>
         </nav>
     </header>
 
@@ -269,19 +276,20 @@
                 <h3>Compliance & Bezpečnost</h3>
                 <p>Ochrana citlivých informací a soulad s legislativou.</p>
                 <ul>
-                    <li>Klasifikace a štítkování dat (Purview)</li>
+                    <li>Klasifikace a ochrana dat s Microsoft Purview</li>
                     <li>Prevence úniku informací (DLP)</li>
-                    <li>Nastavení retenčních pravidel pro maily a soubory</li>
+                    <li>Auditování a logování bezpečnostních incidentů</li>
                 </ul>
             </div>
 
             <div class="card card-ma">
-                <h3>Merger & Acquisition (M&A)</h3>
-                <p>Konsolidace IT infrastruktury, propojování a migrace prostředí.</p>
+                <h3>Mergers & Acquisitions (M&A)</h3>
+                <p>Hladká IT integrace při firemních restrukturalizacích, fúzích a přesunech infrastruktury.</p>
                 <ul>
-                    <li>Komplexní Tenant-to-Tenant migrace</li>
-                    <li>Správa a architektura Hybrid Cloud prostředí</li>
-                    <li>Bezpečné On-premises to Cloud migrace serverů</li>
+                    <li>Tenant-to-tenant migrace a konsolidace</li>
+                    <li>Návrh a správa hybridních cloudových architektur</li>
+                    <li>Migrace z on-premise do cloudu a zpětné migrace</li>
+                    <li>Propojení identit a infrastruktury mezi tenanty</li>
                 </ul>
             </div>
 
@@ -291,5 +299,6 @@
     <footer>
         <p>&copy; 2026 INTEGRAX. Všechna práva vyhrazena.</p>
     </footer>
+
 </body>
 </html>
